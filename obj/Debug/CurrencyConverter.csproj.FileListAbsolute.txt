@@ -1,0 +1,15 @@
+C:\Users\lucas\source\repos\CurrencyConverter\bin\Debug\CurrencyConverter.exe.config
+C:\Users\lucas\source\repos\CurrencyConverter\bin\Debug\CurrencyConverter.exe
+C:\Users\lucas\source\repos\CurrencyConverter\bin\Debug\CurrencyConverter.pdb
+C:\Users\lucas\source\repos\CurrencyConverter\obj\Debug\CurrencyConverter.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\CurrencyConverter\obj\Debug\CurrencyConverter.Form1.resources
+C:\Users\lucas\source\repos\CurrencyConverter\obj\Debug\CurrencyConverter.Properties.Resources.resources
+C:\Users\lucas\source\repos\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.GenerateResource.cache
+C:\Users\lucas\source\repos\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\CurrencyConverter\obj\Debug\CurrencyConverter.exe
+C:\Users\lucas\source\repos\CurrencyConverter\obj\Debug\CurrencyConverter.pdb
+C:\Users\lucas\source\repos\CurrencyConverter\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lucas\source\repos\CurrencyConverter\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\lucas\source\repos\CurrencyConverter\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lucas\source\repos\CurrencyConverter\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\lucas\source\repos\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.CopyComplete
