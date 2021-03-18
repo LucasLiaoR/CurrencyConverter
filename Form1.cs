@@ -35,10 +35,46 @@ namespace CurrencyConverter
 
         }
 
+        static string previouslyDeletedItemArrivee;
+        static string previouslyDeletedItemDepart;
 
-        private void listBoxCurrArrivee_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void listBoxCheckChanged(object sender, EventArgs e)
         {
-            // Modifier la liste depart/arrivée selon celle qui a été séléctionnée pour ne pas avoir de doublon dans les deux listes
+            ListBox listBoxChanged = (ListBox)sender;
+            
+
+            if (listBoxChanged.Name == "listBoxCurrDepart")
+            {
+                if (previouslyDeletedItemArrivee != null)
+                {
+                    listBoxCurrArrivee.Items.Add(previouslyDeletedItemArrivee);
+                }
+
+                previouslyDeletedItemArrivee = listBoxChanged.SelectedItem.ToString();
+                
+                listBoxCurrArrivee.Items.Remove(listBoxChanged.SelectedItem.ToString());
+
+                listBoxCurrArrivee.Sorted = true; 
+            }
+            else
+            {
+                if (previouslyDeletedItemDepart != null)
+                {
+                    listBoxCurrDepart.Items.Add(previouslyDeletedItemDepart);
+                }
+
+                previouslyDeletedItemDepart = listBoxChanged.SelectedItem.ToString();
+
+                listBoxCurrDepart.Items.Remove(listBoxChanged.SelectedItem.ToString());
+
+                listBoxCurrArrivee.Sorted = true;
+            }
+
+            if (listBoxCurrArrivee.SelectedItem != null && listBoxCurrDepart.SelectedItem != null)
+            {
+                btnConvertir_Click(sender, e);
+            }
         }
 
         private async void btnConvertir_Click(object sender, EventArgs e)

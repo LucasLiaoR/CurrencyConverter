@@ -30,7 +30,6 @@
         {
             this.textBoxCurrDepart = new System.Windows.Forms.TextBox();
             this.textBoxCurrArrivee = new System.Windows.Forms.TextBox();
-            this.btnConvertir = new System.Windows.Forms.Button();
             this.listBoxCurrDepart = new System.Windows.Forms.ListBox();
             this.listBoxCurrArrivee = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.textBoxCurrDepart.Name = "textBoxCurrDepart";
             this.textBoxCurrDepart.Size = new System.Drawing.Size(167, 20);
             this.textBoxCurrDepart.TabIndex = 0;
+            this.textBoxCurrDepart.Text = "1";
             // 
             // textBoxCurrArrivee
             // 
@@ -52,16 +52,6 @@
             this.textBoxCurrArrivee.Name = "textBoxCurrArrivee";
             this.textBoxCurrArrivee.Size = new System.Drawing.Size(167, 20);
             this.textBoxCurrArrivee.TabIndex = 1;
-            // 
-            // btnConvertir
-            // 
-            this.btnConvertir.Location = new System.Drawing.Point(315, 81);
-            this.btnConvertir.Name = "btnConvertir";
-            this.btnConvertir.Size = new System.Drawing.Size(158, 61);
-            this.btnConvertir.TabIndex = 2;
-            this.btnConvertir.Text = "Convertir";
-            this.btnConvertir.UseVisualStyleBackColor = true;
-            this.btnConvertir.Click += new System.EventHandler(this.btnConvertir_Click);
             // 
             // listBoxCurrDepart
             // 
@@ -104,6 +94,7 @@
             this.listBoxCurrDepart.Name = "listBoxCurrDepart";
             this.listBoxCurrDepart.Size = new System.Drawing.Size(166, 212);
             this.listBoxCurrDepart.TabIndex = 3;
+            this.listBoxCurrDepart.SelectedIndexChanged += new System.EventHandler(this.listBoxCheckChanged);
             // 
             // listBoxCurrArrivee
             // 
@@ -146,7 +137,7 @@
             this.listBoxCurrArrivee.Name = "listBoxCurrArrivee";
             this.listBoxCurrArrivee.Size = new System.Drawing.Size(166, 212);
             this.listBoxCurrArrivee.TabIndex = 4;
-            this.listBoxCurrArrivee.SelectedIndexChanged += new System.EventHandler(this.listBoxCurrArrivee_SelectedIndexChanged);
+            this.listBoxCurrArrivee.SelectedIndexChanged += new System.EventHandler(this.listBoxCheckChanged);
             // 
             // label1
             // 
@@ -193,7 +184,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxCurrArrivee);
             this.Controls.Add(this.listBoxCurrDepart);
-            this.Controls.Add(this.btnConvertir);
             this.Controls.Add(this.textBoxCurrArrivee);
             this.Controls.Add(this.textBoxCurrDepart);
             this.Name = "Form1";
@@ -208,7 +198,6 @@
 
         private System.Windows.Forms.TextBox textBoxCurrDepart;
         private System.Windows.Forms.TextBox textBoxCurrArrivee;
-        private System.Windows.Forms.Button btnConvertir;
         private System.Windows.Forms.ListBox listBoxCurrDepart;
         private System.Windows.Forms.ListBox listBoxCurrArrivee;
         private System.Windows.Forms.Label label1;
