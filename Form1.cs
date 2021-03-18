@@ -38,24 +38,26 @@ namespace CurrencyConverter
 
         private void listBoxCurrArrivee_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // Modifier la liste depart/arrivée selon celle qui a été séléctionnée pour ne pas avoir de doublon dans les deux listes
         }
 
         private async void btnConvertir_Click(object sender, EventArgs e)
         {
-            
+            string deviseDepart = listBoxCurrDepart.SelectedItem.ToString();
+            string deviseArrivee = listBoxCurrArrivee.SelectedItem.ToString();
 
             if (listBoxCurrDepart.SelectedItem != null && listBoxCurrArrivee.SelectedItem != null)
             {
-                if (!listBoxCurrDepart.SelectedItem.ToString().Equals(listBoxCurrArrivee.SelectedItem.ToString()))
+                if (!deviseDepart.Equals(deviseArrivee))
                 {
 
-
-                    var response = await ApiHelper.GetChangeRate(listBoxCurrDepart.SelectedItem.ToString(), listBoxCurrArrivee.SelectedItem.ToString());
+                    var response = await ApiHelper.GetChangeRate(deviseDepart, deviseArrivee);
 
                     var test = JsonConvert.DeserializeObject<TauxChange>(response);
 
-                    textBox1.Text = test.rates[listBoxCurrArrivee.SelectedItem.ToString()].ToString();
+                    tauxChange.Text = test.rates[deviseArrivee].ToString();
+
+                    calculerDevises();
                 }
                 else
                 {
@@ -64,6 +66,13 @@ namespace CurrencyConverter
                 
             }
             
+        }
+
+        private void calculerDevises()
+        {
+
+
+            textBoxCurrArrivee.Text = (Convert.ToDouble(textBoxCurrDepart.Text) * Convert.ToDouble(tauxChange.Text)).ToString();
         }
 
     }

@@ -35,7 +35,7 @@
             this.listBoxCurrArrivee = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tauxChange = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -166,12 +166,12 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Devise d\'arrivée";
             // 
-            // textBox1
+            // tauxChange
             // 
-            this.textBox1.Location = new System.Drawing.Point(347, 221);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.tauxChange.Location = new System.Drawing.Point(347, 221);
+            this.tauxChange.Name = "tauxChange";
+            this.tauxChange.Size = new System.Drawing.Size(100, 20);
+            this.tauxChange.TabIndex = 7;
             // 
             // label3
             // 
@@ -188,7 +188,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tauxChange);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxCurrArrivee);
@@ -213,7 +213,7 @@
         private System.Windows.Forms.ListBox listBoxCurrArrivee;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tauxChange;
         private System.Windows.Forms.Label label3;
     }
 }
