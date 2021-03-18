@@ -2,7 +2,7 @@
 Conversion d'un montant dans une devise vers une autre via l'aide d'une API pour récupérer les taux de change.
 
 
-
+API utilisée : https://exchangeratesapi.io/
 
 
 
