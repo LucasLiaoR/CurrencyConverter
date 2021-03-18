@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
 
 namespace CurrencyConverter
 {
@@ -32,17 +33,8 @@ namespace CurrencyConverter
             listBoxCurrDepart.Sorted = true;
             listBoxCurrArrivee.Sorted = true;
 
-
-            initCurrList(response);
         }
 
-        private void initCurrList(string response)
-        {
-
-            var jsonRates = JsonConvert.DeserializeObject<Class1>(response);
-
-
-        }
 
         private void listBoxCurrArrivee_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -51,18 +43,19 @@ namespace CurrencyConverter
 
         private async void btnConvertir_Click(object sender, EventArgs e)
         {
-            double tauxChange;
+            
 
             if (listBoxCurrDepart.SelectedItem != null && listBoxCurrArrivee.SelectedItem != null)
             {
                 if (!listBoxCurrDepart.SelectedItem.ToString().Equals(listBoxCurrArrivee.SelectedItem.ToString()))
                 {
-                    textBoxCurrDepart.Text = listBoxCurrDepart.SelectedItem.ToString();
-                    textBoxCurrArrivee.Text = listBoxCurrArrivee.SelectedItem.ToString();
+
 
                     var response = await ApiHelper.GetChangeRate(listBoxCurrDepart.SelectedItem.ToString(), listBoxCurrArrivee.SelectedItem.ToString());
 
-                    //string test = JsonConvert.DeserializeObject<Class1>(response).rates; ==> modifier Class1 pour récupérer directement le taux de change unique
+                    var test = JsonConvert.DeserializeObject<TauxChange>(response);
+
+                    textBox1.Text = test.rates[listBoxCurrArrivee.SelectedItem.ToString()].ToString();
                 }
                 else
                 {
@@ -72,5 +65,6 @@ namespace CurrencyConverter
             }
             
         }
+
     }
 }
